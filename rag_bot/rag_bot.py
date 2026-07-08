@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct, VectorParams, Distance
 load_dotenv()
+
 client = OpenAI(
     api_key=os.environ["OPENROUTER_API_KEY"],
     base_url="https://openrouter.ai/api/v1",
@@ -18,14 +19,13 @@ EMBED_MODEL = "text-embedding-ada-002"
 VECTOR_SIZE = 1536
 CHAT_MODEL = "google/gemma-4-26b-a4b-it:free"
 
+
 def embed(texts):
     response = client.embeddings.create(
         model=EMBED_MODEL,
         input=texts,
     )
     return [item.embedding for item in response.data]
-
-
 def load_docs(folder):
     docs = []
     for filename in os.listdir(folder):
@@ -61,6 +61,7 @@ def index_docs(docs):
     )
 
     chunks = []
+
     for filename, content in docs:
         for chunk_id, chunk in enumerate(chunk_text(content)):
             chunks.append({
@@ -70,7 +71,7 @@ def index_docs(docs):
             })
 
     print(f"Создание эмбеддингов: {len(chunks)}")
-    vectors = embed([chunk["text"] for chunk in chunks])
+    vectors = embed([item["text"] for item in chunks])
     points = []
     for chunk, vector in zip(chunks, vectors):
         raw_id = f"{chunk['source']}_{chunk['chunk_id']}"
@@ -92,6 +93,7 @@ def index_docs(docs):
 
 def search(query, top_k=3):
     query_vector = embed([query])[0]
+
     results = qdrant.query_points(
         collection_name=COLLECTION,
         query=query_vector,
@@ -111,6 +113,7 @@ def search(query, top_k=3):
 
 def ask_llm(prompt, retries=2):
     last_error = None
+
     for attempt in range(retries):
         try:
             response = client.chat.completions.create(
@@ -121,18 +124,22 @@ def ask_llm(prompt, retries=2):
                 temperature=0.1,
                 max_tokens=300,
             )
+
             return response.choices[0].message.content
 
         except Exception as error:
             last_error = error
             print(f"Попытка {attempt + 1}/{retries}: {str(error)[:180]}")
+
             if attempt < retries - 1:
                 time.sleep(5)
+
     return f"Не удалось получить ответ от модели. Ошибка: {str(last_error)[:200]}"
 
 
 def answer(query):
     results = search(query)
+
     if not results or results[0]["score"] < 0.35:
         return {
             "answer": "Я не знаю. В документах нет информации по этому вопросу.",
@@ -144,6 +151,7 @@ def answer(query):
         f"[{item['source']}, chunk {item['chunk_id']}]\n{item['text']}"
         for item in results
     )
+
     prompt = f"""
 Ты помощник по документам.
 
@@ -154,10 +162,13 @@ def answer(query):
 
 Документы:
 {context}
+
 Вопрос:
 {query}
 """
+
     text = ask_llm(prompt)
+
     return {
         "answer": text,
         "sources": list(dict.fromkeys(item["source"] for item in results)),
@@ -167,10 +178,14 @@ def answer(query):
 
 def main():
     docs = load_docs("docs")
+
     print("Загрузка документов")
+
     for filename, content in docs:
         print(f"{filename}: {len(content)} символов")
+
     index_docs(docs)
+
     questions = [
         "Сколько стоит аренда на 1 этаже?",
         "Какой телефон у управляющей компании?",
@@ -178,6 +193,7 @@ def main():
         "Есть ли кинотеатр?",
         "Сколько стоит аренда на 5 этаже?",
         "Какой адрес?",
+        "Какая завтра погода?",
     ]
     print("\nТестовые вопросы")
     for question in questions:
@@ -187,6 +203,7 @@ def main():
         if result["sources"]:
             print(f"Источник: {', '.join(result['sources'])}")
             print(f"Score: {result['score']:.3f}")
+
 
 if __name__ == "__main__":
     main()
