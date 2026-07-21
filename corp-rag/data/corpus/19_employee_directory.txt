@@ -1,0 +1,22 @@
+СПРАВОЧНИК СОТРУДНИКОВ
+
+1. Иванов Иван — Team Lead, Python-разработка (руководитель команды, 5 лет опыта).
+2. Петрова Анна — Backend Developer (FastAPI, Django, 3 года опыта).
+3. Сидоров Павел — Frontend Developer (React, TypeScript, 3 года опыта).
+4. Козлова Елена — DevOps Engineer (AWS, Docker, Kubernetes, 4 года опыта).
+5. Смирнов Алексей — QA Engineer (автоматизация тестирования, 2 года опыта).
+6. Соколова Мария — Project Manager (управление проектами, 6 лет опыта).
+7. Фёдоров Дмитрий — Senior Backend Developer (Microservices, Kafka, 7 лет опыта).
+8. Григорьева Ольга — Data Analyst (SQL, Python, Tableau, 3 года опыта).
+9. Андреев Сергей — Security Engineer (кибербезопасность, 5 лет опыта).
+10. Васильева Екатерина — HR-менеджер (подбор, адаптация, 4 года опыта).
+11. Дмитриев Павел — Frontend Team Lead (React, Vue, 6 лет опыта).
+12. Ильина Анна — System Administrator (Linux, сети, 5 лет опыта).
+13. Крылов Игорь — Mobile Developer (iOS, Swift, 3 года опыта).
+14. Лебедева Наталья — Designer (Figma, UX/UI, 4 года опыта).
+15. Матвеев Алексей — Junior Backend Developer (Python, 1 год опыта).
+
+Контакты:
+- Корпоративная почта: имя.фамилия@ambralla.ru
+- Slack: @имя.фамилия
+- Телефон: +7 (495) 123-45-67 (доб. 100–115)

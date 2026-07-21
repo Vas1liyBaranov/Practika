@@ -1,0 +1,26 @@
+ДОЛЖНОСТНАЯ ИНСТРУКЦИЯ: DEVOPS-ИНЖЕНЕР
+
+1. Настройка CI/CD (GitHub Actions, GitLab CI, Jenkins).
+2. Управление инфраструктурой (AWS, Docker, Kubernetes, Terraform).
+3. Мониторинг и логирование (Prometheus, Grafana, ELK, Sentry).
+4. Автоматизация рутинных задач (скрипты, Ansible).
+5. Обеспечение доступности и надёжности сервисов (SLA 99.9%).
+6. Управление секретами и доступом (Vault, AWS Secrets Manager).
+7. Настройка сетей, VPN, балансировщиков нагрузки (NGINX, HAProxy).
+8. Работа с базами данных: резервное копирование, репликация, миграции.
+9. Оптимизация стоимости облачных ресурсов.
+10. Участие в разработке архитектуры и планировании масштабирования.
+
+Требования:
+- Docker, Kubernetes (Helm, Kustomize)
+- AWS (EC2, S3, RDS, VPC, IAM, EKS)
+- Terraform, Terragrunt
+- CI/CD: GitHub Actions, GitLab CI
+- Мониторинг: Prometheus, Grafana
+- Логирование: ELK, Loki
+- Python, Bash
+- Linux, Networking
+
+Зарплата: 180 000 – 300 000 руб/мес.
+Опыт: от 3 лет.
+Уровень: Senior.

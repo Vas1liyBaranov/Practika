@@ -1,0 +1,7 @@
+streamlit
+openai
+python-dotenv
+qdrant-client
+pymupdf
+python-docx
+pydantic

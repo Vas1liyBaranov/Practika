@@ -1,0 +1,30 @@
+{"id": "q001", "question": "Сколько длится стажировка?", "expected": "covered", "allowed_sources": ["18_internship_program.txt"], "note": "3 месяца"}
+{"id": "q002", "question": "Какой график работы у разработчиков?", "expected": "covered", "allowed_sources": ["06_work_schedule.txt"], "note": "с 10:00 до 19:00"}
+{"id": "q003", "question": "Кто такой Иванов Иван?", "expected": "covered", "allowed_sources": ["19_employee_directory.txt"], "note": "Team Lead, Python"}
+{"id": "q004", "question": "Можно ли использовать ChatGPT?", "expected": "covered", "allowed_sources": ["14_ai_policy.txt"], "note": "да, разрешено"}
+{"id": "q005", "question": "Какие технологии использует бэкенд?", "expected": "covered", "allowed_sources": ["03_backend_dev.txt"], "note": "Python, FastAPI, SQL, Docker"}
+{"id": "q006", "question": "Что такое CRM-система?", "expected": "covered", "allowed_sources": ["12_crm_project.txt"], "note": "управление клиентской базой и продажами"}
+{"id": "q007", "question": "Какой депозит требуется при аренде?", "expected": "covered", "allowed_sources": ["15_faq.txt"], "note": "100% от месячной аренды"}
+{"id": "q008", "question": "Сколько длится отпуск?", "expected": "covered", "allowed_sources": ["06_work_schedule.txt"], "note": "28 календарных дней"}
+{"id": "q009", "question": "Какие форматы документов поддерживаются?", "expected": "covered", "allowed_sources": ["parsers.py"], "note": "PDF, DOCX, TXT, MD"}
+{"id": "q010", "question": "Какая модель используется для эмбеддингов?", "expected": "covered", "allowed_sources": ["embeddings.py"], "note": "text-embedding-ada-002"}
+{"id": "q011", "question": "Где хранятся документы?", "expected": "covered", "allowed_sources": ["app.py"], "note": "data/uploads"}
+{"id": "q012", "question": "Что такое RAG?", "expected": "covered", "allowed_sources": ["rag.py"], "note": "Retrieval-Augmented Generation"}
+{"id": "q013", "question": "Какую модель использует LLM?", "expected": "covered", "allowed_sources": [".env", "rag.py"], "note": "google/gemma-4-26b-a4b-it:free"}
+{"id": "q014", "question": "Как загрузить документ?", "expected": "covered", "allowed_sources": ["app.py"], "note": "через кнопку Browse files в разделе Документы"}
+{"id": "q015", "question": "Как посмотреть историю запросов?", "expected": "covered", "allowed_sources": ["app.py"], "note": "в разделе История"}
+{"id": "q016", "question": "Как удалить документ?", "expected": "covered", "allowed_sources": ["app.py"], "note": "кнопка Удалить в разделе Документы"}
+{"id": "q017", "question": "Что такое KnowledgeBase Pro?", "expected": "covered", "allowed_sources": ["app.py"], "note": "название системы"}
+{"id": "q018", "question": "Сколько этажей в здании?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q019", "question": "Какая завтра погода?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q020", "question": "Сколько стоит билет в кино?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q021", "question": "Какой президент России?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q022", "question": "Что такое Python?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q023", "question": "Как подать заявку на ремонт?", "expected": "covered", "allowed_sources": ["15_faq.txt"], "note": "по телефону или через личный кабинет"}
+{"id": "q024", "question": "Можно ли передать помещение в субаренду?", "expected": "covered", "allowed_sources": ["15_faq.txt"], "note": "только с письменного согласия"}
+{"id": "q025", "question": "Какой размер чанка используется?", "expected": "covered", "allowed_sources": ["chunking.py"], "note": "1000 символов, overlap 200"}
+{"id": "q026", "question": "Какие права у администратора?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q027", "question": "Можно ли взять отпуск зимой?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q028", "question": "Как создать новую ветку в Git?", "expected": "not_found", "allowed_sources": [], "note": "в корпусе нет такой информации"}
+{"id": "q029", "question": "Как называется проект?", "expected": "covered", "allowed_sources": ["12_crm_project.txt"], "note": "CRM-система"}
+{"id": "q030", "question": "Какой срок действия договора аренды?", "expected": "covered", "allowed_sources": ["doc_01_contract_template.txt"], "note": "1 год"}

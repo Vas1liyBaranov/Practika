@@ -1,0 +1,55 @@
+СХЕМА БАЗЫ ДАННЫХ
+
+Таблица users:
+- id (INT, PRIMARY KEY, AUTO_INCREMENT)
+- name (VARCHAR(100), NOT NULL)
+- email (VARCHAR(100), UNIQUE, NOT NULL)
+- password_hash (VARCHAR(255), NOT NULL)
+- role (VARCHAR(50)): admin, manager, developer, viewer
+- created_at (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+- updated_at (DATETIME, DEFAULT CURRENT_TIMESTAMP ON UPDATE)
+- is_active (BOOLEAN, DEFAULT TRUE)
+
+Таблица projects:
+- id (INT, PRIMARY KEY, AUTO_INCREMENT)
+- name (VARCHAR(200), NOT NULL)
+- description (TEXT)
+- status (VARCHAR(50)): active, paused, completed, archived
+- owner_id (INT, FOREIGN KEY → users.id)
+- created_at (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+- deadline (DATE)
+
+Таблица tasks:
+- id (INT, PRIMARY KEY, AUTO_INCREMENT)
+- title (VARCHAR(200), NOT NULL)
+- description (TEXT)
+- status (VARCHAR(50)): new, in_progress, review, done
+- priority (INT): 1 — критичный, 5 — низкий
+- project_id (INT, FOREIGN KEY → projects.id)
+- assignee_id (INT, FOREIGN KEY → users.id)
+- created_at (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+- due_date (DATE)
+- completed_at (DATETIME)
+
+Таблица comments:
+- id (INT, PRIMARY KEY, AUTO_INCREMENT)
+- text (TEXT, NOT NULL)
+- task_id (INT, FOREIGN KEY → tasks.id)
+- author_id (INT, FOREIGN KEY → users.id)
+- created_at (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+
+Таблица audit_log:
+- id (INT, PRIMARY KEY, AUTO_INCREMENT)
+- user_id (INT, FOREIGN KEY → users.id)
+- action (VARCHAR(100), NOT NULL)
+- details (JSON)
+- created_at (DATETIME, DEFAULT CURRENT_TIMESTAMP)
+- ip_address (VARCHAR(45))
+
+Индексы:
+- users.email (UNIQUE)
+- tasks.project_id
+- tasks.assignee_id
+- comments.task_id
+- audit_log.user_id
+- audit_log.created_at

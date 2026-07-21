@@ -1,0 +1,26 @@
+ДОЛЖНОСТНАЯ ИНСТРУКЦИЯ: FRONTEND-РАЗРАБОТЧИК
+
+1. Разработка пользовательских интерфейсов с использованием React, TypeScript.
+2. Стилизация компонентов с использованием Tailwind CSS, Styled Components.
+3. Интеграция с бэкендом через REST API и WebSockets.
+4. Настройка сборки (Vite, Webpack) и деплоя (Vercel, Netlify).
+5. Тестирование (Jest, React Testing Library, Cypress).
+6. Оптимизация производительности (lazy loading, код-сплиттинг).
+7. Адаптивная вёрстка и кросс-браузерная совместимость.
+8. Работа с системой контроля версий Git.
+9. Участие в код-ревью и планировании спринтов.
+10. Взаимодействие с дизайнерами (Figma, Zeplin).
+
+Технологии:
+- React 18, Next.js 14
+- TypeScript
+- Tailwind CSS, Styled Components
+- Redux Toolkit, Zustand
+- React Query, SWR
+- Vite, Webpack
+- Jest, React Testing Library, Cypress
+- Git, GitHub
+
+Зарплата: 130 000 – 220 000 руб/мес.
+Опыт: от 2 лет.
+Уровень: Middle.
