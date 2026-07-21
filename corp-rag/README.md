@@ -1,4 +1,4 @@
-# KnowledgeBase Pro
+# Корпоративная база знаний
 
 Корпоративная поисковая система на основе RAG (Retrieval-Augmented Generation).
 
